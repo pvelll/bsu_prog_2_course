@@ -1,11 +1,11 @@
-package group5.varC.sushko.products;
+package group5.varC.sushko.products.Dishes;
 
 import group5.varC.sushko.products.ReflectionCheck.ReflectionChecker;
 import group5.varC.sushko.products.baseClass.Components;
 import group5.varC.sushko.products.baseClass.Dish;
 import group5.varC.sushko.products.interfaces.ConsistOf;
 
-public class Sandwich extends Dish implements ConsistOf {
+public class Lunch extends Dish implements ConsistOf {
     @Override
     public double calculateCalories() {
         double calories = 0.0;

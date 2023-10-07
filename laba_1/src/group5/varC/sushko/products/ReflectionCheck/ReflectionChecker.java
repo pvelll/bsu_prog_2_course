@@ -5,9 +5,10 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
 public class ReflectionChecker {
-    public void showClassName(Object object){
+    public String showClassName(Object object){
         Class clazz = object.getClass();
-        System.out.println(clazz.getName());
+//        System.out.println(clazz.getName());
+        return clazz.getName();
     }
 
     public void showClassFields(Object object){

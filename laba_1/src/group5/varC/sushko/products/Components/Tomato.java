@@ -3,7 +3,7 @@ package group5.varC.sushko.products.Components;
 import group5.varC.sushko.products.baseClass.Components;
 
 public class Tomato extends Components {
-    public Tomato(double mass){
+    public Tomato(int mass){
         this.mass = mass;
     }
     @Override
