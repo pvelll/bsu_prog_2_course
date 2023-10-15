@@ -2,6 +2,7 @@ package group5.varC.sushko.products.Components;
 
 import group5.varC.sushko.products.baseClass.Food;
 
+
 public class Cheese extends Food {
     private double mass;
     private int yearOfProduction;
@@ -20,6 +21,9 @@ public class Cheese extends Food {
         }
         return false;
     }
+    public String toString(){
+        return "сыр массой " + Double.toString(mass) + " и годом производства " + Integer.toString(yearOfProduction);
+    }
 
     public void consume() {
         System.out.println(this + " съеден");
@@ -32,4 +36,9 @@ public class Cheese extends Food {
         return mass;
     }
 
+    @Override
+    public double calculateCalories() {
+        if(yearOfProduction < 1950) return mass*30.7;
+        else return mass*20.4;
+    }
 }

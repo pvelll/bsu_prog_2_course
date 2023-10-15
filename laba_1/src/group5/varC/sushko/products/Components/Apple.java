@@ -1,6 +1,7 @@
 package group5.varC.sushko.products.Components;
 
 import group5.varC.sushko.products.baseClass.Food;
+import group5.varC.sushko.products.interfaces.Nutritious;
 
 public class Apple extends Food {
     private String size;
@@ -30,5 +31,12 @@ public class Apple extends Food {
     @Override
     public String toString() {
         return super.toString() + " размера '" + size.toUpperCase() + "'";
+    }
+
+    @Override
+    public double calculateCalories() {
+        if(size.equals("большое")) return 75;
+        if(size.equals("маленькое")) return 25;
+        return 50;
     }
 }

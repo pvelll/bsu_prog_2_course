@@ -11,7 +11,11 @@ public class Sandwich implements Nutritious, ConsistOf {
     ArrayList<Food> foodArrayList = new ArrayList<Food>();
     @Override
     public double calculateCalories() {
-        return 0.0;
+        double calories = 0;
+        for(Food a : foodArrayList){
+            calories += a.calculateCalories();
+        }
+        return calories;
     }
 
     @Override

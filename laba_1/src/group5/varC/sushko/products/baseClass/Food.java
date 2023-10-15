@@ -1,8 +1,9 @@
 package group5.varC.sushko.products.baseClass;
 
 import group5.varC.sushko.products.interfaces.Consumable;
+import group5.varC.sushko.products.interfaces.Nutritious;
 
-public abstract class Food implements Consumable {
+public abstract class Food implements Consumable, Nutritious {
     String name = null;
 
     public Food(String name) {
