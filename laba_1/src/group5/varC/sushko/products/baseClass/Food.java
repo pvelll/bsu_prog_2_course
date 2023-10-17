@@ -1,25 +1,14 @@
 package group5.varC.sushko.products.baseClass;
 
 import group5.varC.sushko.products.interfaces.Consumable;
+import group5.varC.sushko.products.interfaces.LengthOfObj;
 import group5.varC.sushko.products.interfaces.Nutritious;
 
-public abstract class Food implements Consumable, Nutritious {
-    String name = null;
+public class Food implements Consumable, Nutritious, LengthOfObj {
+    private String name = null;
 
     public Food(String name) {
-        this.name = name;
-    }
-
-    @Override
-    public boolean equals(Object arg0) {
-        if (!(arg0 instanceof Food)) return false;
-        if (name == null || ((Food) arg0).name == null) return false; // Шаг 2
-        return name.equals(((Food) arg0).name); // Шаг 3
-    }
-
-    public String toString() {
-        return name;
-    }
+        this.name = name;}
 
     public String getName() {
         return name;
@@ -28,5 +17,34 @@ public abstract class Food implements Consumable, Nutritious {
     public void setName(String name) {
         this.name = name;
     }
+
+    @Override
+    public boolean equals(Object arg0) {
+        if (!(arg0 instanceof Food)) return false;
+        if (name==null || ((Food)arg0).name==null) return false;
+        return name.equals(((Food)arg0).name);
+    }
+
+    @Override
+    public String toString() {
+        return name;
+    }
+
+    @Override
+    public void consume() {
+        System.out.println(this + " съедено");
+    }
+
+    @Override
+    public int Length(){
+        return 4;
+    }
+
+    @Override
+    public int calculateCalories() {
+        int calories = 100;
+        return calories;
+    }
 }
+
 

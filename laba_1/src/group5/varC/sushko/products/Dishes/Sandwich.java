@@ -3,31 +3,59 @@ package group5.varC.sushko.products.Dishes;
 import group5.varC.sushko.products.ReflectionCheck.ReflectionChecker;
 import group5.varC.sushko.products.baseClass.Food;
 import group5.varC.sushko.products.interfaces.ConsistOf;
+import group5.varC.sushko.products.interfaces.Consumable;
 import group5.varC.sushko.products.interfaces.Nutritious;
 
 import java.util.ArrayList;
 
-public class Sandwich implements Nutritious, ConsistOf {
-    ArrayList<Food> foodArrayList = new ArrayList<Food>();
+public class Sandwich extends Food {
+    private String filling1;
+    private String filling2;
+
+    public void consume() {
+        System.out.println(this + " съеден");
+    }
+
+    public Sandwich(String filling1, String filling2) {
+        super("Сендвич");
+        this.filling1 = filling1;
+        this.filling2 = filling2;
+    }
+
     @Override
-    public double calculateCalories() {
-        double calories = 0;
-        for(Food a : foodArrayList){
-            calories += a.calculateCalories();
+    public boolean equals(Object arg0) {
+        if (!super.equals(arg0)) return false;
+        if (!(arg0 instanceof Sandwich)) return false;
+        return (filling2.equals(((Sandwich) arg0).filling2)) && (filling1.equals(((Sandwich) arg0).filling1));
+    }
+
+    public String toString() {
+        return super.toString() + " c '" + filling1.toUpperCase() + "'" + " и '" + filling2.toUpperCase() + "'";
+    }
+
+    @Override
+    public int calculateCalories() {
+        int calories = 0;
+        if (filling1.equals("бекон")) {
+            calories += 500;
+        } else if (filling1.equals("ветчина")) {
+            calories += 300;
+        }else if(filling1.equals("колбаска")){
+            calories+=200;
+        }
+        if (filling2.equals("сыр")) {
+            calories += 100;
+        } else if (filling2.equals("масло")) {
+            calories += 150;
+        }else if(filling2.equals("кетчуп")){
+            calories+=70;
         }
         return calories;
     }
 
     @Override
-    public void ProductConsistOf() {
-        ReflectionChecker reflectionChecker = new ReflectionChecker();
-        for(Food a: foodArrayList){
-            System.out.println(ReflectionChecker.showClassName(a));
-        }
-    }
-    @Override
-    public void setCompound(Food food) {
+    public int Length(){
 
-        foodArrayList.add(food);
+        return 8 + filling1.length() + filling2.length();
     }
 }
