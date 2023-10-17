@@ -1,12 +1,6 @@
-package group5.varC.sushko.products.Dishes;
+package group5.varC.sushko.products.Components;
 
-import group5.varC.sushko.products.ReflectionCheck.ReflectionChecker;
 import group5.varC.sushko.products.baseClass.Food;
-import group5.varC.sushko.products.interfaces.ConsistOf;
-import group5.varC.sushko.products.interfaces.Consumable;
-import group5.varC.sushko.products.interfaces.Nutritious;
-
-import java.util.ArrayList;
 
 public class Sandwich extends Food {
     private String filling1;

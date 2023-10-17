@@ -35,7 +35,6 @@ public class Apple extends Food {
         if(!(obj instanceof Apple)) return false;
         return size.equals(((Apple)obj).size);
     }
-
     @Override
     public int calculateCalories() {
         int calories = 0;

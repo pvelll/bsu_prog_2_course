@@ -4,10 +4,10 @@ import group5.varC.sushko.products.baseClass.Food;
 
 
 public class Cheese extends Food {
-    private double mass;
-    private int yearOfProduction;
+    private String mass;
+    private String yearOfProduction;
 
-    public Cheese(double mass, int yearOfProduction) {
+    public Cheese(String mass, String yearOfProduction) {
         super("Сыр");
         this.mass = mass;
         this.yearOfProduction = yearOfProduction;
@@ -17,28 +17,28 @@ public class Cheese extends Food {
     public boolean equals(Object object) {
         if(super.equals(object)){
             if (!(object instanceof Cheese)) return false;
-            if(Double.compare (mass, ((Cheese) object).mass) == 0 && Integer.compare(yearOfProduction, ((Cheese) object).getYearOfProduction ()) == 0) return true;
+            if(this.mass.equals(((Cheese) object).mass) && this.yearOfProduction.equals(((Cheese) object).yearOfProduction)) return true;
         }
         return false;
     }
     public String toString(){
-        return "сыр массой " + Double.toString(mass) + " и годом производства " + Integer.toString(yearOfProduction);
+        return "сыр массой " + mass + " и годом производства " + yearOfProduction;
     }
 
     public void consume() {
         System.out.println(this + " съеден");
     }
 
-    public int getYearOfProduction(){
+    public String getYearOfProduction(){
         return yearOfProduction;
     }
-    public double getMass(){
+    public String getMass(){
         return mass;
     }
 
     @Override
-    public double calculateCalories() {
-        if(yearOfProduction < 1950) return mass*30.7;
-        else return mass*20.4;
+    public int calculateCalories() {
+        if(Integer.getInteger(yearOfProduction) < 1950) return Integer.getInteger(mass)*30;
+        else return Integer.getInteger(mass)*20;
     }
 }
