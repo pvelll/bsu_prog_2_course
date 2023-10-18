@@ -20,7 +20,7 @@ public class Apple extends Food {
     }
 
     public Apple(String size){
-        super("Apple");
+        super("Яблык");
         this.size= size;
     }
 
@@ -48,6 +48,6 @@ public class Apple extends Food {
 
     @Override
     public int Length(){
-        return 5 + size.length();
+        return super.Length() + size.length();
     }
 }

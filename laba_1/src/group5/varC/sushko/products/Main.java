@@ -10,18 +10,16 @@ import java.util.Comparator;
 //javac group5/varC/sushko/products/Main.java  + java group5.varC.sushko.products.Main args
 public class Main {
     public static void main(String[] args) {
-        args = new String[4];
-        args[0] = "Apple/большое ";
-        args[1] = "Sandwich/колбаска/ветчина";
-        args[2] = "-calories";
-        args[3] = "-sort";
 
         Food[] breakfast = new Food[20];
         boolean sort = false;
         boolean calories = false;
 //        ReflectionChecker reflectionChecker = new ReflectionChecker();
 //        Apple apple = new Apple("большое");
-//        System.out.println(reflectionChecker.showClassName(apple);
+//        System.out.println(reflectionChecker.showClassNameapple
+
+
+        ;
         int counterBreakfast = 0;
 
         for (int item = 0; item < args.length; item++) {
@@ -57,6 +55,7 @@ public class Main {
             if (breakfast[i] == null) break;
             breakfast[i].consume();
         }
+        // подсчет продуктов
         int count = 0;
         Food[] diff = new Food[counterBreakfast];
         for (int i = 0; i < counterBreakfast; i++) {
@@ -88,9 +87,10 @@ public class Main {
                 public int compare(Object f1, Object f2) {
                     if (f1 == null) return -1;
                     if (f2 == null) return 1;
-                    if (((Food) f1).Length() > ((Food) f2).Length()) return 1;
-                    if (((Food) f1).Length() < ((Food) f2).Length()) return -1;
-                    return 0;
+//                    if (((Food) f1).Length() > ((Food) f2).Length()) return 1;
+//                    if (((Food) f1).Length() < ((Food) f2).Length()) return -1;
+                    return ((Food) f1).Length() - ((Food) f2).Length();
+//                    return 0;
                 }
             });
         }
@@ -101,7 +101,6 @@ public class Main {
             breakfast[i].consume();
         }
         System.out.print("\nСъедено продуктов: " + counterBreakfast);
-        System.out.println("\n\nВсего хорошего!");
 
     }
 }

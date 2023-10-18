@@ -38,7 +38,12 @@ public class Cheese extends Food {
 
     @Override
     public int calculateCalories() {
-        if(Integer.getInteger(yearOfProduction) < 1950) return Integer.getInteger(mass)*30;
-        else return Integer.getInteger(mass)*20;
+        if(Integer.parseInt(yearOfProduction) < 1950) return Integer.parseInt(mass)*30;
+        else return Integer.parseInt(mass)*20;
+    }
+
+    @Override
+    public int Length() {
+        return  yearOfProduction.length() + super.Length();
     }
 }

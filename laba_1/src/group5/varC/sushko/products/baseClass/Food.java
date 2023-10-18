@@ -4,7 +4,7 @@ import group5.varC.sushko.products.interfaces.Consumable;
 import group5.varC.sushko.products.interfaces.LengthOfObj;
 import group5.varC.sushko.products.interfaces.Nutritious;
 
-public class Food implements Consumable, Nutritious, LengthOfObj {
+public abstract class Food implements Consumable, Nutritious, LengthOfObj {
     private String name = null;
 
     public Food(String name) {
@@ -29,21 +29,9 @@ public class Food implements Consumable, Nutritious, LengthOfObj {
     public String toString() {
         return name;
     }
-
     @Override
-    public void consume() {
-        System.out.println(this + " съедено");
-    }
-
-    @Override
-    public int Length(){
-        return 4;
-    }
-
-    @Override
-    public int calculateCalories() {
-        int calories = 100;
-        return calories;
+    public int Length() {
+        return name.length();
     }
 }
 

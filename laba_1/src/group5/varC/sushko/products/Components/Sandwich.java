@@ -30,26 +30,26 @@ public class Sandwich extends Food {
     @Override
     public int calculateCalories() {
         int calories = 0;
-        if (filling1.equals("бекон")) {
-            calories += 500;
-        } else if (filling1.equals("ветчина")) {
-            calories += 300;
-        }else if(filling1.equals("колбаска")){
-            calories+=200;
-        }
-        if (filling2.equals("сыр")) {
+        if (filling1.equalsIgnoreCase("ШПРОТ")) {
             calories += 100;
-        } else if (filling2.equals("масло")) {
+        }
+        if (filling1.equalsIgnoreCase("ВЕТЧИНА")) {
             calories += 150;
-        }else if(filling2.equals("кетчуп")){
-            calories+=70;
+        }
+        if (filling1.equalsIgnoreCase("КОЛБАСКА")) {
+            calories += 30;
+        }
+        if (filling2.equalsIgnoreCase("СЫР")) {
+            calories += 80;
+        }
+        if (filling2.equalsIgnoreCase("БАТОН")) {
+            calories += 70;
         }
         return calories;
     }
 
     @Override
-    public int Length(){
-
-        return 8 + filling1.length() + filling2.length();
+    public int Length() {
+        return super.Length() + filling1.length() + filling2.length();
     }
 }
